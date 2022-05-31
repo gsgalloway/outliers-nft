@@ -36,6 +36,7 @@
     "typescript": "^4.7.2"
   },
   "dependencies": {
-    "@gsgalloway/solidity-erc721-transfer-restricted": "^1.0.1"
+    "@gsgalloway/solidity-erc721-transfer-restricted": "^1.0.1",
+    "@openzeppelin/contracts": "^4.6.0"
   }
 }
