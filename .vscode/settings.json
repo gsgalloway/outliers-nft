@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.options": {
+    "extensions": [".ts"],
+    "parserOptions": {
+      "createDefaultProgram": true
+    }
+  },
+}
