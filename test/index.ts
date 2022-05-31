@@ -60,4 +60,27 @@ describe("OutliersNFT", function () {
       "OutliersNFT: must have minter role to mint"
     );
   });
+
+  it("baseURI doesn't work for un-minted tokens", async function () {
+    const tx = outliersNFT.tokenURI(1234);
+    await expect(tx).to.be.revertedWith(
+      "OutliersNFT: URI query for nonexistent token"
+    );
+  });
+
+  it("baseURI works as expected for minted tokens", async function () {
+    // Mint
+    await outliersNFT
+      .connect(admin)
+      .grantRole(minterRole, await minter.getAddress());
+    await outliersNFT.connect(minter).mint();
+
+    // Set base URL
+    const baseURL = "http://example.com/";
+    await outliersNFT.connect(admin).setBaseURI(baseURL);
+
+    // Query token URI
+    const tokenURI = await outliersNFT.tokenURI(0);
+    expect(tokenURI).to.eq(`${baseURL}0`);
+  });
 });
