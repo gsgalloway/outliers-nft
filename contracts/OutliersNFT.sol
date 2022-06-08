@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@gsgalloway/solidity-erc721-transfer-restricted/contracts/ERC721TransferRestricted.sol";
